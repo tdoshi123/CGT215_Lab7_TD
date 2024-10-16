@@ -10,10 +10,10 @@ using namespace sfp;
 
 int main() {
     RenderWindow window(VideoMode(800, 600), "Bounce");
-    World world(Vector2f(0, 1));  // Gravity pointing downwards
+    World world(Vector2f(0, 1));
 
     PhysicsCircle ball;
-    ball.setCenter(Vector2f(400, 300));
+    ball.setCenter(Vector2f(50, 50));
     ball.setRadius(20);
     world.AddPhysicsBody(ball);
 
@@ -73,7 +73,6 @@ int main() {
     Time lastTime(clock.getElapsedTime());
 
     while (window.isOpen()) {
-        // Calculate MS since last frame
         Time currentTime(clock.getElapsedTime());
         Time deltaTime(currentTime - lastTime);
         int deltaTimeMS(deltaTime.asMilliseconds());
